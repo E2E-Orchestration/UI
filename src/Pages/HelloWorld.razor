@@ -1,0 +1,28 @@
+﻿@page "/hello"
+@inject HttpClient Http
+
+<h1>Greeting page</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (greeting == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <p>Successfully received the following greeting from Service One:</p>
+    <p>
+        <span data-test-id="greeting">@greeting</span>
+    </p>
+}
+
+@code {
+    
+    private string greeting;
+
+    protected override async Task OnInitializedAsync()
+    {
+        greeting = await Http.GetStringAsync("hello");
+    }
+}
