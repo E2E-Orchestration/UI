@@ -19,7 +19,7 @@ jobs:
 
       - uses: microsoft/variable-substitution@v1 
         with:
-            files: '/src/wwroot/appsettings.json'
+            files: './src/wwwroot/appsettings.json'
         env:
             ApiConfig.ApiUri: https://service-one.azurewebsites.net/api/
 
