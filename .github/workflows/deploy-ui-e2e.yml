@@ -1,0 +1,12 @@
+name: Get token - DELETe
+
+on:
+  workflow_dispatch
+
+jobs:
+  build_and_deploy_job:
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - name: get the token
+        run: echo ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GRAY_SAND_0F71FAE00 }}
